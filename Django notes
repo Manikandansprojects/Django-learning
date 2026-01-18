@@ -1,0 +1,86 @@
+Django notes:
+
+1.“Real-world APIs use GET to fetch data, POST to create data, PUT/PATCH to update, DELETE to remove data, while webhooks handle push-based real-time events like payments and messages.”
+2.“A webhook in Django is an HTTP endpoint that receives real-time event data from external services using POST requests. It is used for payment notifications, message events, and third-party integrations.”
+
+ API                   | Webhook            |
+| -------------------- | ------------------ |
+| Client requests data | Server pushes data |
+| Pull model           | Push model         |
+| Not real-time        | Real-time          |
+
+One-Line Examples
+
+✔ Payment confirmation
+✔ Chat message delivery
+✔ CI/CD automation
+✔ Email tracking
+✔ OTP verification
+✔ Order status updates
+
+WebHook - A webhook is an HTTP callback that allows one system to send real-time data to another system when an event occurs using POST requests.
+Why is @csrf_exempt used in webhooks? - External services cannot send CSRF tokens, so CSRF protection must be disabled for webhook endpoints.
+How do you secure a webhook?
+Signature verification
+Secret key validation
+IP whitelisting
+HTTPS
+
+| Webhook     | WebSocket             |
+| ----------- | --------------------- |
+| One-way     | Two-way               |
+| Event-based | Continuous connection |
+| HTTP        | TCP                   |
+
+How do you test webhooks?
+Postman
+cURL
+ngrok
+Webhook.site
+
+What are common webhook failures?
+Invalid signature
+Timeout
+Incorrect endpoint
+Server down
+
+partials - Partials in Django are reusable template fragments that can be included in multiple templates using {% include %}.
+
+| Partials              | Template Inheritance |
+| --------------------- | -------------------- |
+| Small reusable pieces | Page structure       |
+| `{% include %}`       | `{% extends %}`      |
+| Navbar, footer        | Base layout          |
+
+| Code | Meaning      |
+| ---- | ------------ |
+| 200  | OK           |
+| 201  | Created      |
+| 400  | Bad Request  |
+| 401  | Unauthorized |
+| 403  | Forbidden    |
+| 404  | Not Found    |
+| 500  | Server Error |
+
+comparision 
+
+| Term   | Meaning        |
+| ------ | -------------- |
+| Pull   | Client asks    |
+| Push   | Server sends   |
+| GET    | Read           |
+| POST   | Create         |
+| PUT    | Full update    |
+| PATCH  | Partial update |
+| DELETE | Remove         |
+
+
+PULL vs PUSH realtime scenario
+| Scenario              | Type |
+| --------------------- | ---- |
+| Fetch user list       | Pull |
+| Refresh notifications | Pull |
+| Payment success       | Push |
+| Chat message          | Push |
+
+Real-world APIs use GET to fetch data, POST to create data, PUT/PATCH to update, DELETE to remove data, while webhooks handle push-based real-time events like payments and messages.
